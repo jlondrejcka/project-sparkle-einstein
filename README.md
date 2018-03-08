@@ -1,8 +1,11 @@
-# SFDX-Falcon Project Template
+# Project Sparkle Einstein
 
-This template can be used as a starting point for any Salesforce DX project, but has been specialized for building managed packages.  Each directory in this repository contains a README file describing its purpose, what type of files it should contain, and additional setup/configuration details (if needed).
+This code is provided as a showcase for packageable Einstein features, and offers a starting point for ISV looking ot create an Einstein Extension Package.  Each directory in this repository contains a README file describing its purpose, what type of files it should contain, and additional setup/configuration details (if needed).
 
-**Intro Video:** [Salesforce 201: Advanced Implementation for ISVs](http://bit.ly/sfdx-flow-for-isvs-falcon-intro)
+#Prerequisits
+[Einstein Trailmix]
+(einstein.trailhead.com)
+[SFDX - Salesforce 201: Advanced Implementation for ISVs](http://bit.ly/sfdx-flow-for-isvs-falcon-intro)
 
 ## License
 
@@ -10,7 +13,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Getting Started
 
-These instructions will get you a copy of the SFDX-Falcon template on your local machine and explain how to customize things for your project.  They also explain how to distribute your project to developers once you're up and running.  
+These repo will give you a copy of the code that is directly related to the Project Sparkle Einstein Labs App available on the App Exchange. You can download the code on your local machine to use as a starting poitn for your own particular use cases.  The project also includes the source code for the OpenCi.com CI methods for you to adopt, should you wish.
 
 If your environment meets all the prerequisites, setup and customization of this template should only take 5-10 minutes.
 
@@ -29,6 +32,7 @@ Your Salesforce, GitHub, and Local environments should meet the following prereq
 | Register a Namespace Prefix         | Required for creating managed packages                  | [Register a Namespace Prefix][3]       |
 | Create a Managed Package            | Required for distribution on the AppExchange            | [Create Salesforce Packages][4]        |
 | Link your Namespace to your Dev Hub | Required for creating namespaced scratch orgs           | [Link a Namespace to a Dev Hub Org][5] |
+| Project Sparkle Base Package | Required as base package for this extension package           | [Project Sparkle App Listing][6] |
 
 [1]: http://bit.ly/enable-dev-hub               "Enable the Dev Hub in Your Org"
 [1a]: http://bit.ly/add-sfdx-users-to-devhub    "Add Salesforce DX Users"
@@ -36,6 +40,7 @@ Your Salesforce, GitHub, and Local environments should meet the following prereq
 [3]: http://bit.ly/register-a-namespace-prefix  "Register a Namespace Prefix"
 [4]: http://bit.ly/create-a-salesforce-package  "Create Salesforce Packages"
 [5]: http://bit.ly/link-namespace-to-devhub     "Link a Namespace to a Dev Hub Org"
+[6]: https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000DrzQOUAZ     "Project Sparkle App Listing"
 
 
 ### GitHub Environment Prerequisites
@@ -71,22 +76,22 @@ Windows 10 users can enable the "Windows Subsystem for Linux" feature and instal
 **Step One:** Clone the SFDX-Falcon Template repository (use HTTPS or SSH, not both)
 ```
 # HTTPS Clone
-git clone https://github.com/sfdx-isv/sfdx-falcon-template.git
+git clone https://github.com/jlondrejcka/project-sparkle-einstein
 
 # SSH Clone
-git clone git@github.com:sfdx-isv/sfdx-falcon-template.git
+git clone git@github.com:jlondrejcka/project-sparkle-einstein.git
 ```
 **Step Two:** Create a new local directory for your project 
 ```
-mkdir my-new-sfdx-project
+mkdir project-sparkle-einstein
 ```
-**Step Three:** Copy everything (including hidden files/directories) from sfdx-falcon-template to your project
+**Step Three:** Copy everything (including hidden files/directories) from project-sparkle-einstein to your project
 ```
-cp -a  sfdx-falcon-template/.  my-new-sfdx-project
+cp -a  project-sparkle-einstein/.  project-folder
 ```
 **Step Four:** Kill, then re-initialize Git in your project folder to start from a clean (empty) history
 ```
-cd my-new-sfdx-project            # Change to your project directory
+cd project-folder                 # Change to your project directory
 rm -rf .git                       # Remove .git, killing the sfdx-falcon-template history
 git init                          # Re-initialize Git 
 git add -A                        # Stage all files in your project directory
@@ -135,12 +140,6 @@ You are now ready to customize your Salesforce DX project and the SFDX-Falcon di
 ## Final Customizations
 In order to fully utilize the SFDX-Falcon Template, you should complete the following final customizations inside of your project/repository. Once these tasks are complete, you will be ready to download/convert metadata from your packaging org.
 
-### Customize SFDX-Falcon directory names
-From the root of your project directory, rename the "my_ns_prefix" directory in sfdx-source so that it matches the namespace prefix of your managed package.
-```
-# Execute this from the root of your project directory
-mv ./sfdx-source/my_ns_prefix ./sfdx-source/your_ns_prefix
-```
 ### Customize Salesforce DX project settings
 There are two required edits (and one optional one) you need to make inside your `sfdx-project.json` file.
 ```
@@ -168,7 +167,7 @@ List of resources TBA
 Release history TBA.
 
 ## Authors
-* **Vivek M. Chawla** - *Lead Developer* - [@VivekMChawla](https://twitter.com/VivekMChawla)
+* **Joe Ondrejcka** - *Lead Developer* - [@JosefOndrejcka](https://twitter.com/JosefOndrejcka)
 
 ## Contributors
 TODO: Need to add code of conduct and the process for submitting pull requests.
@@ -181,5 +180,5 @@ TODO
 
 ## Questions/Comments
 
-Salesforce ISV Partners with questions/comments should join the [SFDX-Falcon Chatter Group](http://bit.ly/sfdx-falcon-group) in the Partner Community.  You can also reach out to the author, Vivek M. Chawla on Twitter - [@VivekMChawla](https://twitter.com/VivekMChawla).
+Salesforce ISV Partners with questions/comments please post Issues to the repo and we will make a timely response. 
 
