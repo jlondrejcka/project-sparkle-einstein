@@ -138,14 +138,14 @@ sfdx force:auth:web:login -a my_ns_prefix-SANDBOX -r https://test.salesforce.com
 You are now ready to customize your Salesforce DX project and the SFDX-Falcon directories and scripts.
 
 ## Final Customizations
-In order to fully utilize the SFDX-Falcon Template, you should complete the following final customizations inside of your project/repository. Once these tasks are complete, you will be ready to download/convert metadata from your packaging org.
+In order to fully utilize Project Sparkle Einstein, you should complete the following final customizations inside of your project/repository. Once these tasks are complete, you will be ready to download/convert metadata from your packaging org.
 
 ### Customize Salesforce DX project settings
 There are two required edits (and one optional one) you need to make inside your `sfdx-project.json` file.
 ```
 {
   "packageDirectories": [
-    { "path": "sfdx-source/your_ns_prefix", "default": true },  <----- EDIT ONE: Your package's namespace
+    { "path": "sfdx-source/pse_core", "default": true },  <----- EDIT ONE: Your package's namespace
     { "path": "sfdx-source/unpackaged"},
     { "path": "sfdx-source/untracked"}
   ],

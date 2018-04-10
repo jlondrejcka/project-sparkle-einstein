@@ -53,7 +53,7 @@ jobs:
 ####################################################################################################
   setup-build-environment:
     docker:
-      - image: ncino/ci-sfdx
+      - image: pse/ci-sfdx
     steps:
       - run: 
           name: Display version info for the Salesforce CLI and core plugins (will force updates if needed)
@@ -119,7 +119,7 @@ jobs:
 ####################################################################################################
   test-build-1:
     docker:
-      - image: ncino/ci-sfdx
+      - image: pse/ci-sfdx
     environment:
       - SCRATCH_ORG_CONFIG: test-build-1-scratch-def.json
       - TEST_RESULTS_PATH:  /tmp/test-results
@@ -230,7 +230,7 @@ jobs:
 ####################################################################################################
   test-build-2:
     docker:
-      - image: ncino/ci-sfdx
+      - image: pse/ci-sfdx
     environment:
       - SCRATCH_ORG_CONFIG: test-build-2-scratch-def.json
     steps:
@@ -246,12 +246,12 @@ jobs:
 ####################################################################################################
   create-beta-package:
     docker:
-      - image: ncino/ci-sfdx
+      - image: pse/ci-sfdx
     environment:
       - PACKAGE_NAME:         "Falcon-X"                      # Name of your managed package
       - PACKAGE_VERSION_NAME: "Spring 2018-C"                 # Version Name for your managed package
       - METADATA_PACKAGE_ID:  "0331N000000gPC2QAM"            # Metadata Package ID (always begins with 033)
-      - PACKAGE_DIRECTORY:    "./sfdx-source/isvte_falcon_x"  # SFDX package directory that has your code
+      - PACKAGE_DIRECTORY:    "./sfdx-source/pse_core"  # SFDX package directory that has your code
     steps:
       - checkout                  # Required step.  Checks out the code from your repository.
       - attach_workspace:

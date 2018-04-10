@@ -1,10 +1,10 @@
 {
   "packageDirectories": [
-    { "path": "sfdx-source/my_ns_prefix", "default": true },
-    { "path": "sfdx-source/unpackaged"},
-    { "path": "sfdx-source/untracked"}
+    { "path": "sfdx-source/pse_core", "default": true },
+    { "path": "sfdx-source/einstein_ai"},
+    { "path": "sfdx-source/prediction_io"}
   ],
-  "namespace": "my_ns_prefix",
+  "namespace": "pse",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "41.0"
 }
