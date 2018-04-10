@@ -67,10 +67,10 @@ jobs:
             mkdir /tmp/sfdx-keys
             # Convert the Hex Keys stored in the context's environment variables back to binary
             echo $DEVHUB_SERVER_KEY_HEX | xxd -r -ps >> /tmp/sfdx-keys/dev-hub.key
-            echo $PKGORG_SERVER_KEY_HEX | xxd -r -ps >> /tmp/sfdx-keys/pkg-org.key
+            #echo $PKGORG_SERVER_KEY_HEX | xxd -r -ps >> /tmp/sfdx-keys/pkg-org.key
             # Confirm that our converted keys are both valid RSA Private Keys
             openssl rsa -in /tmp/sfdx-keys/dev-hub.key -check -noout
-            openssl rsa -in /tmp/sfdx-keys/pkg-org.key -check -noout
+            #openssl rsa -in /tmp/sfdx-keys/pkg-org.key -check -noout
       - run:
           name: Validate connection/authentication against the Dev Hub
           command: |
@@ -80,15 +80,17 @@ jobs:
             sfdx force:auth:jwt:grant --clientid $DEVHUB_CONSUMER_KEY \
                                       --jwtkeyfile /tmp/sfdx-keys/dev-hub.key \
                                       --username $DEVHUB_SFDC_USERNAME
-      - run:
-          name: Validate connection/authentication against the Packaging Org
-          command: |
+      
+      #- run:
+      #    name: Validate connection/authentication against the Packaging Org
+      #    command: |
             # Confirm that the key can actually be used to login to the specific
             # Salesforce Org that the username stored in $PKGORG_SFDC_USERNAME
             # is associated with.
-            sfdx force:auth:jwt:grant --clientid $PKGORG_CONSUMER_KEY \
-                                      --jwtkeyfile /tmp/sfdx-keys/pkg-org.key \
-                                      --username $PKGORG_SFDC_USERNAME
+      #      sfdx force:auth:jwt:grant --clientid $PKGORG_CONSUMER_KEY \
+      #                                --jwtkeyfile /tmp/sfdx-keys/pkg-org.key \
+      #                                --username $PKGORG_SFDC_USERNAME
+      
 
       ######
       # NOTE: If you have additional orgs to connect to (eg. UAT Orgs) as part of
@@ -106,7 +108,7 @@ jobs:
           root: /tmp/sfdx-keys
           paths:
             - dev-hub.key
-            - pkg-org.key
+      #      - pkg-org.key
 
       # Store SFDX logs as artifacts
       - store_artifacts:
