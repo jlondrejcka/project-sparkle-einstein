@@ -2,7 +2,8 @@
   "packageDirectories": [
     { "path": "sfdx-source/pse_core", "default": true },
     { "path": "sfdx-source/einstein_ai"},
-    { "path": "sfdx-source/prediction_io"}
+    { "path": "sfdx-source/prediction_io"},
+    { "path": "sfdx-source/einstein_builder"}
   ],
   "namespace": "pse",
   "sfdcLoginUrl": "https://login.salesforce.com",
