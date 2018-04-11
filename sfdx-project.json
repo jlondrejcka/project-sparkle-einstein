@@ -5,7 +5,7 @@
     { "path": "sfdx-source/prediction_io"},
     { "path": "sfdx-source/einstein_builder"}
   ],
-  "namespace": "pse",
+  "namespace": "pse_core",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "41.0"
 }
